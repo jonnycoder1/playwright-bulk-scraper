@@ -1,0 +1,9 @@
+aiofiles==23.2.1
+flake8==6.1.0
+greenlet==3.0.0
+mccabe==0.7.0
+playwright==1.39.0
+pycodestyle==2.11.1
+pyee==11.0.1
+pyflakes==3.1.0
+typing_extensions==4.9.0

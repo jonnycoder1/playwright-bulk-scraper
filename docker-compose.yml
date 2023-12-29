@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  browserless:
+    image: browserless/chrome:arm64
+    ports:
+      - "3000:3000"
+    environment:
+      - TOKEN=end2end-test-token
+    restart: always
+    networks:
+      - scrapetest
+
+  teste2e:
+    build:
+        dockerfile: Dockerfile
+    command: /bin/sh -c "sleep 10 && python test_e2e.py"
+    depends_on:
+      - browserless
+    networks:
+      - scrapetest
+
+networks:
+  scrapetest:
